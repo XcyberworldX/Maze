@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class ButtonAction : MonoBehaviour {
     public float time;
     private bool inside;
@@ -37,7 +39,9 @@ public class ButtonAction : MonoBehaviour {
 
     public void Restart()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //Deprecated
+        //Application.LoadLevel(Application.loadedLevel);
     }
 
     public void Quit()
